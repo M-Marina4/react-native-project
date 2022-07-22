@@ -10,17 +10,12 @@ const profile = {
 
 const Discover = () => {
     var rows = [];
-    for (let index = 0; index < 100; index++) {
-        if(!profile.following.includes(index+1)){
-        rows.push(<Post num={index} key={index}/>)}
-    }
     return(
         <View style={{ flex: 1 }}>
             <ScrollView>
                 <Text>Discover!</Text>
                 <h1>Discover</h1>
                 <h2>{profile.username}</h2>
-                {rows}
             </ScrollView>
         </View>
     )

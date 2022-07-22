@@ -1,16 +1,13 @@
-// import './App.css';
+import './App.css';
 import MyTabs from './Components/Tab/Tab';
-import Home from "./Pages/Home";
-import Profile from "./Pages/Profile";
-import Following from "./Pages/Following";
-import Discover from "./Pages/Discover";
-import NoPage from "./Pages/NoPage";
 import * as React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
+// import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
+// const Tab = createMaterialTopTabNavigator();
 
 export default function App() {
   return (
-    <NavigationContainer>
+    <NavigationContainer className = "Container">
       <MyTabs />
     </NavigationContainer>
   );

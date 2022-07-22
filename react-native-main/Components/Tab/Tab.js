@@ -3,10 +3,8 @@ import { createMaterialBottomTabNavigator } from '@react-navigation/material-bot
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 const Tab = createMaterialBottomTabNavigator();
 import Home from '../../Pages/Home';
-import Notifications from '../../Pages/Notifications';
 import Profile from '../../Pages/Profile';
 import Discover from '../../Pages/Discover';
-import Following from '../../Pages/Following';
 
 export default function MyTabs() {
   return (
@@ -14,7 +12,6 @@ export default function MyTabs() {
       initialRouteName="Home"
       activeColor="#fff"
       labelStyle={{ fontSize: 12 }}
-      style={{ backgroundColor: '#c5aa6a' }}
     >
       <Tab.Screen
         name="Home"
@@ -23,16 +20,6 @@ export default function MyTabs() {
           tabBarLabel: 'Home',
           tabBarIcon: ({ color }) => (
             <MaterialCommunityIcons name="home" color={color} size={26} />
-          ),
-        }}
-      />
-      <Tab.Screen
-        name="Notifications"
-        component={Notifications}
-        options={{
-          tabBarLabel: 'Notifications',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="bell" color={color} size={26} />
           ),
         }}
       />
@@ -46,16 +33,7 @@ export default function MyTabs() {
           ),
         }}
       />
-      <Tab.Screen
-        name="Following"
-        component={Following}
-        options={{
-          tabBarLabel: 'Following',
-          tabBarIcon: ({ color }) => (
-            <MaterialCommunityIcons name="star" color={color} size={26} />
-          ),
-        }}
-      />
+
       <Tab.Screen
         name="Profile"
         component={Profile}

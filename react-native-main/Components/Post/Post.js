@@ -9,7 +9,7 @@ function Post(num) {
     const [isLoading, SetIsLoading] = useState(true);
     const [animeName, setAnimeName] = useState();
     const [animeImage, setAnimeImage] = useState();
-    const [animeDescription, setAnimeDescription] = useState();
+    const [animeCount, setAnimeCount] = useState();
     const [animeRating, setAnimeRating] = useState();
     // const [animeImage, setAnimeImage] = useState();
     useEffect(() => {
@@ -20,7 +20,7 @@ function Post(num) {
             console.log(postResult);
             setAnimeImage(postResult.posterImage.large);
             setAnimeName(postResult.canonicalTitle);
-            setAnimeDescription(postResult.description);
+            setAnimeCount(postResult.episodeCount);
             setAnimeRating(postResult.ageRatingGuide);
         //     setPostTitle(postResult);
         //     setPostAuthor(postResult[num.num].title);
@@ -50,7 +50,7 @@ function Post(num) {
         <h1>{animeName}</h1>
         <img src={animeImage} className = "PostImage"/>
         <h2>{animeRating}</h2>
-        <p>{animeDescription}</p>
+        <p>Episode Count {animeCount}</p>
     </div>
     );
     }

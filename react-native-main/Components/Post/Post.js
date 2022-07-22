@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react';
+import { StyleSheet } from 'react-native';
+
 import './Post.css';
 import './Helper.js';
 import json from '../../Helpers/Helper.js';
@@ -11,6 +13,7 @@ function Post(num) {
     const [animeImage, setAnimeImage] = useState();
     const [animeCount, setAnimeCount] = useState();
     const [animeRating, setAnimeRating] = useState();
+    const [animeJapTitle, setAnimeJapTitle] = useState();
     // const [animeImage, setAnimeImage] = useState();
     useEffect(() => {
         try{
@@ -22,6 +25,7 @@ function Post(num) {
             setAnimeName(postResult.canonicalTitle);
             setAnimeCount(postResult.episodeCount);
             setAnimeRating(postResult.ageRatingGuide);
+            setAnimeJapTitle(postResult.titles.ja_jp);
         //     setPostTitle(postResult);
         //     setPostAuthor(postResult[num.num].title);
         //     setPostBody(postResult[num.num].body);
@@ -45,16 +49,45 @@ function Post(num) {
         );
     }
     else{
+        var divStyle = {
+            backgroundImage: 'url(' + animeImage + ')',
+          };
     return (  
     <div className="Post">
-        <h1>{animeName}</h1>
-        <img src={animeImage} className = "PostImage"/>
-        <h2>{animeRating}</h2>
-        <p>Episode Count {animeCount}</p>
+        <div className="movie_card" id="bright">
+  <div className="info_section">
+    <div className="movie_header">
+      <img className="locandina" src={animeImage}/>
+      <h1>{animeName}</h1>
+      <h4>{animeJapTitle}</h4>
+    </div>
+    <div>
+        <span className="minutes">Episode Count: {animeCount}</span>
+    </div>
+    <div>
+        <p className="type">{animeRating}</p>
+    </div>
+  </div>
+  <div className="blur_back bright_back" style={divStyle}>
+
+  </div>
+</div>
     </div>
     );
     }
     
 }
+
+
+const styles = StyleSheet.create({
+    container: {
+        "width": "50%",
+        "borderTopLeftRadius": 8,
+        "borderTopRightRadius": 8,
+        "borderBottomRightRadius": 8,
+        "borderBottomLeftRadius": 8
+    }
+    
+});
 
 export default Post;

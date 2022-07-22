@@ -1,6 +1,6 @@
 import Post from '../Components/Post/Post';
 import { Text, View, ScrollView } from 'react-native';
-
+import './Home.css';
 const Home = () => {
 //   var count = prompt("Enter the post count!")
 //   parseFloat(count);
@@ -15,7 +15,7 @@ const Home = () => {
       <ScrollView>
             <Text>Home!</Text>
             <h1>Home</h1>
-            {rows}
+            <div className='Home'>{rows}</div>
       </ScrollView>
     </View>
   );

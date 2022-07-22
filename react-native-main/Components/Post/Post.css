@@ -1,8 +1,16 @@
 .Post{
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
     padding: 2vw;
-    width: 50%;
-    font-size: 0.6vw;
     border: 1px solid #000;
     border-radius: 8px;
-    margin: 2vw auto;
+    margin: 2rem auto;
+}
+
+.PostImage{
+    width: 50%;
+    border-radius: 8px;
 }

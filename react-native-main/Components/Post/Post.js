@@ -16,7 +16,6 @@ function Post(num) {
         try{
         const getData = async () => {
             let postHREF = await json.get('/anime');
-            
             let postResult = postHREF.data.data[num.num].attributes;
             console.log(postResult);
             setAnimeImage(postResult.posterImage.large);
@@ -49,7 +48,7 @@ function Post(num) {
     return (  
     <div className="Post">
         <h1>{animeName}</h1>
-        <img src={animeImage}/>
+        <img src={animeImage} className = "PostImage"/>
         <h2>{animeRating}</h2>
         <p>{animeDescription}</p>
     </div>

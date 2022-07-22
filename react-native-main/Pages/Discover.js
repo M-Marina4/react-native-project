@@ -1,5 +1,6 @@
 import Post from '../Components/Post/Post';
 import { Text, View, ScrollView } from 'react-native';
+import { Linking } from 'react-native';
 
 const profile = {
     id: 1,
